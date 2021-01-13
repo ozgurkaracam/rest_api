@@ -18,6 +18,7 @@ class Task extends JsonResource
           'title'=>$this->title,
           'project_id'=>$this->project_id,
           'due_date'=>$this->due_date,
+            'priority'=>$this->priority,
           'created_at'=>$this->created_at,
           'updated_at'=>$this->updated_at
         ];
