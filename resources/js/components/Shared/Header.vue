@@ -30,14 +30,15 @@ export default{
     },
     computed:{
         authenticated(){
-            if(!this.$store.state.authenticated)
-                this.$router.push({path:'/login'})
+            // if(!this.$store.state.authenticated)
+            //     this.$router.push({path:'/login'})
             return this.$store.state.authenticated
         }
     },
     methods:{
         logout(){
             this.$store.dispatch('logout').then(res=>console.log(res));
+            this.$router.push({path:'/login'})
         }
     }
 }

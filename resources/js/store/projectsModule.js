@@ -56,6 +56,9 @@ const projectsModule={
         },
         async delTask({},id){
             return await axios.delete('/api/tasks/'+id,{headers:{'Authorization': this.state.token}})
+        },
+        async updateTask({},payload){
+            return await axios.put('/api/tasks/'+payload.id,payload.formData,{headers:{'Authorization': this.state.token}})
         }
     },
     getters:{

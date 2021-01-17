@@ -26,7 +26,7 @@ class TaskRequest extends FormRequest
         return [
             'project_id'=>['required','integer'],
             'due_date'=>['nullable','date','after_or_equal:date'],
-            'title'=>['required','min:10']
+            'title'=>['required','min:2']
         ];
     }
 }

@@ -1,13 +1,18 @@
 <template>
     <div class="flex justify-between">
         <h1>Tasks</h1>
-        <button class="px-2 py-1 bg-green-500 rounded text-2xl hover:bg-green-400 text-white" @click="formVisible=!formVisible">New Task</button>
+        <button
+            class="px-2 py-1  rounded text-2xl  text-white"
+            :class="{ 'bg-red-500 hover:bg-red-400' : formVisible , 'bg-green-500 hover:bg-green-400' : !formVisible }"
+            @click="formVisible=!formVisible">
+            {{ !formVisible ? 'New Task' : 'Cancel'}}
+        </button>
     </div>
     <div v-if="formVisible" class="w-full">
         <new-task :projectId="project.id"></new-task>
     </div>
     <div class="w-full">
-        <table class="table-auto border-collapse w-4/5 mx-auto border-3">
+        <table class="border-collapse w-4/5 mx-auto border-3 table table-fixed">
             <thead>
             <tr>
                 <td>Title</td>
@@ -30,7 +35,7 @@ import NewTask from './NewTask'
 export default {
     components:{
         Task,
-        NewTask,
+        NewTask
     },
     props:['project'],
     data(){

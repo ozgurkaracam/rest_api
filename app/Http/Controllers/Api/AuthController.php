@@ -56,6 +56,6 @@ class AuthController extends Controller
         $credentials=request(['name','email','password']);
         $credentials['password']=Hash::make($request->get('password'));
         User::create($credentials);
-        return response()->json($credentials);
+        return $this->login($request);
     }
 }

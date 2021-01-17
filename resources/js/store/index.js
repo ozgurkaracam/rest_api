@@ -4,9 +4,9 @@ import projectsModule from "./projectsModule";
 const store= createStore({
     state:{
         user:{},
-        token:'Bearer 157|6Yn1imnuHYjDiancV1FDo6RLG4uz52xaQh5TIo8C',
+        token:'',
         count:5,
-        authenticated:true
+        authenticated:false
     },
     getters:{},
     actions:{

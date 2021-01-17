@@ -23,7 +23,7 @@ class Project extends Model
     public function getImagePathAttribute()
     {
         if(!$this->image!='')
-            return asset('images').'/1610542891.jpeg';
+            return asset('images').'/noimage.png';
         return asset('images').'/'.$this->image;
     }
 
