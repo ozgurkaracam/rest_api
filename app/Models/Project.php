@@ -19,4 +19,15 @@ class Project extends Model
     {
         return $this->hasMany(Task::class);
     }
+
+    public function getImagePathAttribute()
+    {
+        if(!$this->image!='')
+            return asset('images').'/1610542891.jpeg';
+        return asset('images').'/'.$this->image;
+    }
+
+    public function getCreatedAttribute(){
+        return $this->created_at->diffForHumans();
+    }
 }

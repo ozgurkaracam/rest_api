@@ -20,7 +20,7 @@ class ProjectController extends Controller
     public function index()
     {
 
-        $projects=Auth::user()->projects()->withCount('tasks')->get();
+        $projects=Auth::user()->projects()->withCount('tasks')->orderBy('created_at','DESC')->get();
         return new ProjectCollection($projects);
     }
 

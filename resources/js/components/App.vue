@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col min-h-screen justify-between">
         <Header></Header>
-        <main class="flex flex-grow">
+        <main class="flex flex-grow bg-blue-100">
         <router-view></router-view>
         </main>
         <Footer />
@@ -14,7 +14,7 @@
         name: 'App',
         components:{Header, Footer},
         mounted() {
-            console.log('ok')
+
         }
     }
 </script>
